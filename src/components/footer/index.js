@@ -27,7 +27,7 @@ const Index = () => {
         </div>
         <div className="text-white font-rubik text-xs text-center sm:text-left mt-8  sm:mt-0">
           <p className="pb-4">
-            Copyright © 2021. All Rights Reserved by Blockhead
+            Copyright © 2021. All Rights Reserved by Jaw Breakers
           </p>
           <span className="inline-block pr-4 underline">Terms of Service</span>
           <span className="inline-block underline">Privacy Policy</span>

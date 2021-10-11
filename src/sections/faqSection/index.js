@@ -2,39 +2,21 @@ import { useState } from "react";
 
 const accordianData = [
   {
-    question: "Lorem ipsum dolor sit amet lorem ipsum?",
-    answer:
-      "When you own a GoosePunk this is your own character in the metaverse, a cyberpunk/steampunk themed character. Owner ship of a GoosePunk is your exclusive invitation into the Gaggle, a place where other Geese meetup, hangout, relax, exchange art and talk about strategies moving forward inside the dystopian world of Ayame. ",
+    question: "How much to mint a Jaw Breakers?",
+    answer: "Jaw Breakers will be listed at .08 to mint. ",
   },
   {
-    question: "Lorem ipsum dolor sit amet lorem ipsum?",
+    question: "How do I purchase a Jaw Breakers?",
     answer:
-      "When you own a GoosePunk this is your own character in the metaverse, a cyberpunk/steampunk themed character. Owner ship of a GoosePunk is your exclusive invitation into the Gaggle, a place where other Geese meetup, hangout, relax, exchange art and talk about strategies moving forward inside the dystopian world of Ayame. ",
+      "You will be able to mint a Jaw Breakers on release, after that you can purchase one on our opensea page. ",
   },
   {
-    question: "Lorem ipsum dolor sit amet lorem ipsum?",
-    answer:
-      "When you own a GoosePunk this is your own character in the metaverse, a cyberpunk/steampunk themed character. Owner ship of a GoosePunk is your exclusive invitation into the Gaggle, a place where other Geese meetup, hangout, relax, exchange art and talk about strategies moving forward inside the dystopian world of Ayame. ",
+    question: "When will the Jaw Breakers be revealed?",
+    answer: "After 24 hours your Jaw Breakers will reveal itself. ",
   },
   {
-    question: "Lorem ipsum dolor sit amet lorem ipsum?",
-    answer:
-      "When you own a GoosePunk this is your own character in the metaverse, a cyberpunk/steampunk themed character. Owner ship of a GoosePunk is your exclusive invitation into the Gaggle, a place where other Geese meetup, hangout, relax, exchange art and talk about strategies moving forward inside the dystopian world of Ayame. ",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet lorem ipsum?",
-    answer:
-      "When you own a GoosePunk this is your own character in the metaverse, a cyberpunk/steampunk themed character. Owner ship of a GoosePunk is your exclusive invitation into the Gaggle, a place where other Geese meetup, hangout, relax, exchange art and talk about strategies moving forward inside the dystopian world of Ayame. ",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet lorem ipsum?",
-    answer:
-      "When you own a GoosePunk this is your own character in the metaverse, a cyberpunk/steampunk themed character. Owner ship of a GoosePunk is your exclusive invitation into the Gaggle, a place where other Geese meetup, hangout, relax, exchange art and talk about strategies moving forward inside the dystopian world of Ayame. ",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet lorem ipsum?",
-    answer:
-      "When you own a GoosePunk this is your own character in the metaverse, a cyberpunk/steampunk themed character. Owner ship of a GoosePunk is your exclusive invitation into the Gaggle, a place where other Geese meetup, hangout, relax, exchange art and talk about strategies moving forward inside the dystopian world of Ayame. ",
+    question: "How many will there be?",
+    answer: "There will be 10,000 Jaw Breakers. ",
   },
 ];
 

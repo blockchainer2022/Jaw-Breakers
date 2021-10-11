@@ -10,10 +10,22 @@ const Index = () => {
       <div className="container">
         <h2 className="font-serif text-primary text-3xl  mb-10">Roadmap</h2>
         <div className="w-full">
-          <Card />
-          <Card />
-          <Card />
-          <Card line={false} />
+          <Card
+            title="PHASE 1 Floor Sweep"
+            text="We will start the project off with a floor sweep!"
+          />
+          <Card
+            title="PHASE 2 The Jaw Breakers giveaways
+            "
+            text="One lucky Jaw Breakers owner will receive a 1/1 Jaw Breakers!
+            Multiple smaller giveaways as well"
+          />
+          <Card title="PHASE 3" text="Jaw Breakers Merchandise begins" />
+          <Card
+            line={false}
+            title="PHASE 4"
+            text="Every Jaw Breakers owner will get a squarehead airdrop!"
+          />
         </div>
       </div>
     </section>
@@ -22,7 +34,7 @@ const Index = () => {
 
 export default Index;
 
-const Card = ({ line = true }) => (
+const Card = ({ title, text, line = true }) => (
   <div className="w-full flex justify-between items-center card">
     <div
       className={`w-12 h-12 rounded-full bg-primary hidden md:block ${
@@ -38,12 +50,9 @@ const Card = ({ line = true }) => (
       </div>
       <div className="text-dark sm:text-left sm:flex-1">
         <h6 className="font-serif mt-5 mb-5 sm:tracking-widest sm:mb-3 sm:mt-0 sm:text-2xl ">
-          Lorem ipsum dolor sit amet
+          {title}
         </h6>
-        <p className="text-xs">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet
-          tortor, sem id sit risus ultricies. In mauris, tellus nunc.
-        </p>
+        <p className="text-xs">{text}</p>
       </div>
     </div>
   </div>
