@@ -7,7 +7,7 @@ import Slider, { SliderTooltip } from "rc-slider";
 import "rc-slider/assets/index.css";
 import "./style.css";
 
-const Index = ({ account, mint, totalSupply, displayPrice }) => {
+const Index = ({ account, mint, totalSupply, displayPrice, maxSupply }) => {
   const [value, setValue] = useState(0);
   console.log(value);
   const difference = +new moment("2021-09-17 00:00:00").utc() - +new Date();
@@ -80,7 +80,9 @@ const Index = ({ account, mint, totalSupply, displayPrice }) => {
             <div className="mt-14 max-w-md w-full">
               <div className="flex justify-between text-xs mb-5">
                 <span>Total Starfish Minted</span>
-                <span>{totalSupply}/7777</span>
+                <span>
+                  {totalSupply}/{maxSupply}
+                </span>
               </div>
               <Slider min={0} max={20} defaultValue={1} handle={handle} />
               <p className="text-center text-xs mt-2">

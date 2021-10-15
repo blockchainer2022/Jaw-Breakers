@@ -10,9 +10,9 @@ function App() {
   const [account, setAccount] = useState(null);
   const [contract, setContract] = useState(null);
   const [totalSupply, setTotalSupply] = useState(0);
+  const [maxSupply, setMaxSupply] = useState(0);
   const [price, setPrice] = useState(0);
   const [displayPrice, setDisplayPrice] = useState(0);
-
   const [lessMintAmountAlert, setLessMintAmountAlert] = useState(false);
   const [accessAccountDenied, setAccessAccountDenied] = useState(false);
   const [installEthereum, setInstallEthereum] = useState(false);
@@ -25,6 +25,9 @@ function App() {
     useState(false);
   const [mintingInProgress, setMintingInProgress] = useState(false);
   const [confirmTransaction, setConfirmTransaction] = useState(false);
+  const [preSaleEligibility, setPreSaleEligibility] = useState(false);
+  const [saleLive, setSaleLive] = useState(false);
+  const [preSale, setPreSale] = useState(false);
 
   async function loadWeb3() {
     if (window.ethereum) {
@@ -58,6 +61,8 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  console.log("price", price);
+
   const loadBlockchainData = async () => {
     const contract = new window.web3.eth.Contract(contractAbi, contractAddress);
     setContract(contract);
@@ -68,7 +73,7 @@ function App() {
     // Please connect to main net
 
     if (chainId === 4) {
-      toast(`you are connected to main net`, {
+      toast(`You are connected to main net`, {
         type: "success",
         position: toast.POSITION.BOTTOM_CENTER,
       });
@@ -79,10 +84,12 @@ function App() {
       setPrice(price);
       const displayPrice = window.web3.utils.fromWei(price, "ether");
       setDisplayPrice(displayPrice);
-
-      //event will be fired by the smart contract when a new AngryBunny is minted
+      const MAX_SUPPlY = await contract.methods.MAX_SUPPlY().call();
+      // console.log("MAX_SUPPLY:", MAX_SUPPlY);
+      setMaxSupply(MAX_SUPPlY);
+      //event will be fired by the smart contract when a new NFT is minted
       contract.events
-        .AngryBunniesMinted()
+        .NFTMinted()
         .on("data", async function (result) {
           setTotalSupply(result.returnValues[0]);
         })
@@ -123,53 +130,115 @@ function App() {
   async function mint(mintCount) {
     if (contract) {
       if (chainId === 4) {
-        if (mintCount === 0) {
-          // swal("Atleast 1 AngryBunny should be minted", "", "info");
-          setLessMintAmountAlert(true);
-        } else {
-          setConfirmTransaction(true);
-          const finalPrice = Number(price) * mintCount;
-          contract.methods
-            .mintAngryBunnies(mintCount)
-            .send({ from: account, value: finalPrice })
-            .on("transactionHash", function () {
-              // swal({
-              //   title: "Minting NFT!",
-              //   icon: "info",
-              // });
-              setConfirmTransaction(false);
-              setMintingInProgress(true);
-            })
-            .on("confirmation", function () {
-              const el = document.createElement("div");
-              el.innerHTML =
-                "View minted NFT on OpenSea : <a href='https://testnets.opensea.io/account '>View Now</a>";
+        const presaleOpen = await contract.methods.presaleOpen().call();
+        const saleOpen = await contract.methods.saleOpen().call();
+        const eligibility = await contract.methods
+          .checkPresaleEligiblity(account)
+          .call();
+        // console.log("saleopen:", saleOpen);
+        if (presaleOpen === false && saleOpen === false) {
+          setPreSale(true);
+        } else if (presaleOpen === true && saleOpen === false) {
+          if (eligibility) {
+            if (mintCount === 0) {
+              setLessMintAmountAlert(true);
+            } else {
+              setConfirmTransaction(true);
+              const finalPrice = Number(price) * mintCount;
+              contract.methods
+                .mintNFT(mintCount)
+                .send({ from: account, value: finalPrice })
+                .on("transactionHash", function () {
+                  // swal({
+                  //   title: "Minting NFT!",
+                  //   icon: "info",
+                  // });
+                  setConfirmTransaction(false);
+                  setMintingInProgress(true);
+                })
+                .on("confirmation", function () {
+                  const el = document.createElement("div");
+                  el.innerHTML =
+                    "View minted NFT on OpenSea : <a href='https://testnets.opensea.io/account '>View Now</a>";
 
-              // swal({
-              //   title: "NFT Minted!",
-              //   content: el,
-              //   icon: "success",
-              // });
-              setNftMinted(true);
-              setConfirmTransaction(false);
-              setMintingInProgress(false);
-            })
-            .on("error", function (error, receipt) {
-              if (error.code === 4001) {
-                // swal("Transaction Rejected!", "", "error");
-                setTransactionRejected(true);
+                  // swal({
+                  //   title: "NFT Minted!",
+                  //   content: el,
+                  //   icon: "success",
+                  // });
+                  setNftMinted(true);
+                  setConfirmTransaction(false);
+                  setMintingInProgress(false);
+                  setTimeout(() => {
+                    window.location.reload(false);
+                  }, 5000);
+                })
+                .on("error", function (error, receipt) {
+                  if (error.code === 4001) {
+                    // swal("Transaction Rejected!", "", "error");
+                    setTransactionRejected(true);
+                    setConfirmTransaction(false);
+                    setMintingInProgress(false);
+                  } else {
+                    // swal("Transaction Failed!", "", "error");
+                    setTransactionFailed(true);
+                    setConfirmTransaction(false);
+                    setMintingInProgress(false);
+                  }
+                });
+            }
+          } else {
+            setPreSaleEligibility(true);
+          }
+        } else {
+          if (mintCount === 0) {
+            setLessMintAmountAlert(true);
+          } else {
+            setConfirmTransaction(true);
+            const finalPrice = Number(price) * mintCount;
+            contract.methods
+              .mintNFT(mintCount)
+              .send({ from: account, value: finalPrice })
+              .on("transactionHash", function () {
+                // swal({
+                //   title: "Minting NFT!",
+                //   icon: "info",
+                // });
+                setConfirmTransaction(false);
+                setMintingInProgress(true);
+              })
+              .on("confirmation", function () {
+                const el = document.createElement("div");
+                el.innerHTML =
+                  "View minted NFT on OpenSea : <a href='https://testnets.opensea.io/account '>View Now</a>";
+                // swal({
+                //   title: "NFT Minted!",
+                //   content: el,
+                //   icon: "success",
+                // });
+                setNftMinted(true);
                 setConfirmTransaction(false);
                 setMintingInProgress(false);
-              } else {
-                // swal("Transaction Failed!", "", "error");
-                setTransactionFailed(true);
-                setConfirmTransaction(false);
-                setMintingInProgress(false);
-              }
-            });
+                setTimeout(() => {
+                  window.location.reload(false);
+                }, 5000);
+              })
+              .on("error", function (error, receipt) {
+                if (error.code === 4001) {
+                  // swal("Transaction Rejected!", "", "error");
+                  setTransactionRejected(true);
+                  setConfirmTransaction(false);
+                  setMintingInProgress(false);
+                } else {
+                  // swal("Transaction Failed!", "", "error");
+                  setTransactionFailed(true);
+                  setConfirmTransaction(false);
+                  setMintingInProgress(false);
+                }
+              });
+          }
         }
       } else {
-        // swal("Please switch to mainnet to mint AngryBunnies", "", "error");
         setswitchToMainnet(true);
       }
     } else {
@@ -190,12 +259,31 @@ function App() {
         totalSupply={totalSupply}
         displayPrice={displayPrice}
         loadWeb3={loadWeb3}
+        maxSupply={maxSupply}
+      />
+      <InformationModal
+        open={preSale}
+        onClose={setPreSale}
+        title="No presale or sale open yet"
+        text="No presale or sale open yet. Follow us on Discord and Twitter fo the updates"
+      />
+      <InformationModal
+        open={saleLive}
+        onClose={setSaleLive}
+        title="No presale or sale open yet"
+        text="No presale or sale open yet. Please follow our discord for the updates"
+      />
+      <InformationModal
+        open={preSaleEligibility}
+        onClose={setPreSaleEligibility}
+        title="Not Presale Eligible"
+        text="You are not whitelisted for presale"
       />
       <InformationModal
         open={lessMintAmountAlert}
         onClose={setLessMintAmountAlert}
         title="Oops"
-        text="Atleast 1 Pixel Zombie should be minted"
+        text="Atleast 1 Cheetah should be minted"
       />
       <InformationModal
         open={accessAccountDenied}
@@ -237,7 +325,7 @@ function App() {
         open={switchToMainnet}
         onClose={setswitchToMainnet}
         title="Error"
-        text="Please switch to mainnet to mint Pixel Zombie"
+        text="Please switch to mainnet to mint Cheetah"
       />
       <InformationModal
         open={ethereumCompatibleBrowser}
