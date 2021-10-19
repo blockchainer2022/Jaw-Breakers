@@ -5,9 +5,9 @@ import Button from "../button";
 const Index = ({ account, loadWeb3 }) => {
   const [open, setOpen] = useState(false);
   return (
-    <header className=" bg-primary  text-white shadow-md ">
-      <nav className=" container flex items-center justify-between relative">
-        <div className="w-36 flex-1 lg:flex-none">
+    <header className=" bg-primary text-white shadow-md ">
+      <nav className=" container flex items-center justify-between relative py-4">
+        <div className="w-48 flex-1 lg:flex-none">
           <img src={Logo} alt="logo" />
         </div>
         <div className="hidden lg:block flex-1">

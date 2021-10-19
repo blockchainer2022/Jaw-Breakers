@@ -80,11 +80,11 @@ function App() {
       const totalSupply = await contract.methods.totalSupply().call();
       setTotalSupply(totalSupply);
 
-      const price = await contract.methods.price().call();
+      const price = await contract.methods.getPrice().call();
       setPrice(price);
       const displayPrice = window.web3.utils.fromWei(price, "ether");
       setDisplayPrice(displayPrice);
-      const MAX_SUPPlY = await contract.methods.MAX_SUPPlY().call();
+      const MAX_SUPPlY = await contract.methods.MAX_SUPPLY().call();
       // console.log("MAX_SUPPLY:", MAX_SUPPlY);
       setMaxSupply(MAX_SUPPlY);
       //event will be fired by the smart contract when a new NFT is minted
@@ -283,7 +283,7 @@ function App() {
         open={lessMintAmountAlert}
         onClose={setLessMintAmountAlert}
         title="Oops"
-        text="Atleast 1 Cheetah should be minted"
+        text="Atleast 1 Jawbreakerz should be minted"
       />
       <InformationModal
         open={accessAccountDenied}
@@ -325,7 +325,7 @@ function App() {
         open={switchToMainnet}
         onClose={setswitchToMainnet}
         title="Error"
-        text="Please switch to mainnet to mint Cheetah"
+        text="Please switch to mainnet to mint Jawbreakerz"
       />
       <InformationModal
         open={ethereumCompatibleBrowser}
