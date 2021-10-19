@@ -79,7 +79,7 @@ const Index = ({ account, mint, totalSupply, displayPrice, maxSupply }) => {
           ) : (
             <div className="mt-14 max-w-md w-full">
               <div className="flex justify-between text-xs mb-5">
-                <span>Total Starfish Minted</span>
+                <span>Total Jawbreakers Minted</span>
                 <span>
                   {totalSupply}/{maxSupply}
                 </span>
