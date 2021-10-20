@@ -66,10 +66,7 @@ const Index = ({ account, mint, totalSupply, displayPrice, maxSupply }) => {
             Jaw Breakers
           </h1>
           <p className="text-center sm:mx-auto md:mx-0 text-xs mt-6 md:text-left w-full  max-w-lg">
-            Jaw Breakers are randomly generated NFTs that look amazing! We are
-            not only creating art but creating a project with so much more. You
-            can check our roadmap out below, we will constantly be adding new
-            things as we go.
+            Jaw Breakers are randomly generated NFTs that look amazing!
           </p>
           {difference > 0 ? (
             <Timer

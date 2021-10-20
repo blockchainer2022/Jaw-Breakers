@@ -16,7 +16,7 @@ const Index = () => {
           </div>
         </div>
         <div className="md:w-1/2">
-          <h4 className="text-4xl font-serif my-10 ">LOREM IPSUM</h4>
+          <h4 className="text-4xl font-serif my-10 ">Jaw Breakers</h4>
           <p className="text-xs font-normal">
             Jaw Breakers are randomly generated NFTs that look amazing! We are
             not only creating art but creating a project with so much more. You
