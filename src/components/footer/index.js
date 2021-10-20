@@ -29,8 +29,6 @@ const Index = () => {
           <p className="pb-4">
             Copyright © 2021. All Rights Reserved by Jaw Breakers
           </p>
-          <span className="inline-block pr-4 underline">Terms of Service</span>
-          <span className="inline-block underline">Privacy Policy</span>
         </div>
       </div>
     </footer>

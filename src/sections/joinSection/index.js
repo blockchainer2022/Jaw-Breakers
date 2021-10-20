@@ -12,13 +12,7 @@ const Index = () => {
         </div>
         <div className="md:w-1/2">
           <h6 className="font-serif text-3xl my-5">JOIN OUR DISCORD GROUP</h6>
-          <p className="text-xs">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet
-            tortor, sem id sit risus ultricies. In mauris, tellus nunc, ante
-            porttitor eu, ut. Pharetra phasellus massa faucibus dolor sit
-            porttitor. Integer purus faucibus ultricies molestie suspendisse
-            sit.
-          </p>
+          <p className="text-xs"></p>
           <div className="mt-4">
             <Button className="ml-0" color="primary">
               Join Discord
