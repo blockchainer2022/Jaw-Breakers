@@ -94,7 +94,8 @@ const Index = ({ account, mint, totalSupply, displayPrice, maxSupply }) => {
               <div className="mt-8">
                 <Button
                   onClick={() => mint(value)}
-                  disabled={!account ? true : false}
+                  // disabled={!account ? true : false}
+                  disabled={true}
                 >
                   Mint now
                 </Button>
