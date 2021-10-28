@@ -29,7 +29,7 @@ const Index = () => {
         <h2 className="font-serif  text-3xl text-center  lg:text-4xl mb-20">
           Our Jaw Breakers
         </h2>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-5">
           {data.map((v, i) => (
             <div key={i}>
               <img src={v} alt="" className="w-full" />
