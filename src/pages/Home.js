@@ -7,6 +7,7 @@ import {
   RoadmapSection,
   FaqSection,
   JoinSection,
+  GallarySection,
 } from "../sections";
 toast.configure();
 const Home = ({
@@ -28,6 +29,7 @@ const Home = ({
           maxSupply={maxSupply}
         />
         <AboutSection />
+        <GallarySection />
         <RoadmapSection />
         <FaqSection />
         <JoinSection />
