@@ -2,21 +2,21 @@ import { useState } from "react";
 
 const accordianData = [
   {
-    question: "How much to mint a Jaw Breakers?",
-    answer: "Jaw Breakers will be listed at .08 to mint. ",
+    question: "How much to mint a Jawbreakerz?",
+    answer: "Jawbreakerz will be listed at .08 to mint. ",
   },
   {
-    question: "How do I purchase a Jaw Breakers?",
+    question: "How do I purchase a Jawbreakerz?",
     answer:
-      "You will be able to mint a Jaw Breakers on release, after that you can purchase one on our opensea page. ",
+      "You will be able to mint a Jawbreakerz on release, after that you can purchase one on our opensea page. ",
   },
   {
-    question: "When will the Jaw Breakers be revealed?",
-    answer: "After 24 hours your Jaw Breakers will reveal itself. ",
+    question: "When will the Jawbreakerz be revealed?",
+    answer: "After 24 hours your Jawbreakerz will reveal itself. ",
   },
   {
     question: "How many will there be?",
-    answer: "There will be 10,000 Jaw Breakers. ",
+    answer: "There will be 10,000 Jawbreakerz. ",
   },
 ];
 

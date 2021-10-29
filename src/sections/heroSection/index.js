@@ -63,10 +63,10 @@ const Index = ({ account, mint, totalSupply, displayPrice, maxSupply }) => {
         </div>
         <div className="md:w-1/2">
           <h1 className="font-serif text-3xl text-center mt-10 md:text-5xl lg:text-6xl  md:text-left">
-            Jaw Breakers
+            Jawbreakerz
           </h1>
           <p className="text-center sm:mx-auto md:mx-0 text-xs mt-6 md:text-left w-full  max-w-lg">
-            Jaw Breakers are randomly generated NFTs that look amazing!
+            Jawbreakerz are randomly generated NFTs that look amazing!
           </p>
           {difference > 0 ? (
             <Timer
@@ -78,7 +78,7 @@ const Index = ({ account, mint, totalSupply, displayPrice, maxSupply }) => {
           ) : (
             <div className="mt-14 max-w-md w-full">
               <div className="flex justify-between text-xs mb-5">
-                <span>Total Jawbreakers Minted</span>
+                <span>Total Jawbreakerz Minted</span>
                 <span>
                   {totalSupply}/{maxSupply}
                 </span>

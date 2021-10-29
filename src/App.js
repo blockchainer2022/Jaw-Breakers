@@ -32,6 +32,7 @@ function App() {
   async function loadWeb3() {
     if (window.ethereum) {
       window.web3 = new Web3(window.ethereum);
+      window.localStorage.setItem("account", "metamask");
       try {
         loadBlockchainData();
         getCurrentAddressConnected();
@@ -57,7 +58,10 @@ function App() {
   }
 
   useEffect(() => {
-    loadWeb3();
+    const account = window.localStorage.getItem("account");
+    if (account === "metamask") {
+      loadWeb3();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

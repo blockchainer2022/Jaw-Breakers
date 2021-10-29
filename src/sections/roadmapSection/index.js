@@ -11,20 +11,40 @@ const Index = () => {
         <h2 className="font-serif text-primary text-3xl  mb-10">Roadmap</h2>
         <div className="w-full">
           <Card
-            title="PHASE 1 Floor Sweep"
-            text="We will start the project off with a floor sweep!"
+            title="PHASE 1"
+            text={[
+              "10% Minted - Jawbreakerz Airdrop to Holders 5 Jawbreakerz will be airdropped to 5 random holders!",
+
+              "20% Minted - Ethereum Raffle Holders will be able to participate in an Ethereum raffle!",
+
+              "30% Minted - 2nd Jawbreakerz Airdrop to Holders 5 more Jawbreakerz will be airdropped to another 5 random holders!",
+            ]}
           />
           <Card
-            title="PHASE 2 The Jaw Breakers giveaways
+            title="PHASE 2
             "
-            text="One lucky Jaw Breakers owner will receive a 1/1 Jaw Breakers!
-            Multiple smaller giveaways as well"
+            text={[
+              "40% Minted - 2nd Ethereum Raffle Holders will be able to participate in the 2nd Ethereum raffle!",
+
+              "50% Minted - Creation of Community Wallet We will dedicate 10 Ethereum (depending on Ethereum price at the time) towards a community wallet. Holders will be able to vote on how to spend the funds in order to grow the project!",
+            ]}
           />
-          <Card title="PHASE 3" text="Jaw Breakers Merchandise begins" />
+          <Card
+            title="PHASE 3"
+            text={[
+              "60% Minted - Charity Donation We will donate $10,000 USD to a charity that is chosen by the community!",
+
+              "70% Minted - Legendary Jawbreakerz Airdrop 2 super rare 1/1 Jawbreakerz will be randomly airdropped to 2 lucky holders!",
+              "80% Minted - Floor Sweep We will sweep the floor and give back those Jawbreakerz to loyal members of the community!",
+            ]}
+          />
           <Card
             line={false}
             title="PHASE 4"
-            text="Every Jaw Breakers owner will get a squarehead airdrop!"
+            text={[
+              "90% Minted - Merch Store We will start working on setting up a merch store to sell cool t-shirts, hoodies, and accessories based on Jawbreakerz!",
+              "100% Minted - Sold Out!! In celebration of reaching this huge milestone we will airdrop 2 more 1/1 legendary Jawbreakerz to holders, have another Ethereum Raffle, and start development on Roadmap V2!",
+            ]}
           />
         </div>
       </div>
@@ -52,7 +72,12 @@ const Card = ({ title, text, line = true }) => (
         <h6 className="font-serif mt-5 mb-5 sm:tracking-widest sm:mb-3 sm:mt-0 sm:text-2xl ">
           {title}
         </h6>
-        <p className="text-xs">{text}</p>
+        {/* <p className="text-xs">{text}</p> */}
+        <ul>
+          {text.map((v, i) => (
+            <li className="text-xs mb-2">{v}</li>
+          ))}
+        </ul>
       </div>
     </div>
   </div>

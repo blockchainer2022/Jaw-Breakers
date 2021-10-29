@@ -19,7 +19,7 @@ const Index = () => {
         </div>
         <div className="text-white font-rubik text-xs text-center sm:text-left mt-8  sm:mt-0">
           <p className="pb-4">
-            Copyright © 2021. All Rights Reserved by Jaw Breakers
+            Copyright © 2021. All Rights Reserved by Jawbreakerz
           </p>
         </div>
       </div>

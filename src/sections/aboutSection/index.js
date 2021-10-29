@@ -16,12 +16,20 @@ const Index = () => {
           </div>
         </div>
         <div className="md:w-1/2">
-          <h4 className="text-4xl font-serif my-10 ">Jaw Breakers</h4>
+          <h4 className="text-4xl font-serif my-10 ">Jawbreakerz</h4>
           <p className="text-xs font-normal">
-            Jaw Breakers are randomly generated NFTs that look amazing! We are
-            not only creating art but creating a project with so much more. You
-            can check our roadmap out below, we will constantly be adding new
-            things as we go
+            These wicked and devious Jawbreakerz come from a world like no
+            other. Each Jawbreakerz is inspired by a gobstopper candy, they're
+            mean and tough to crack. Not only do they look amazing but they
+            stand out from other NFT projects. This passion project came alive
+            from the idea of wanting to create some badass looking art. We are
+            therefore extremely proud to present you Jawbreakerz and we hope you
+            all love it just as much as we do!
+          </p>
+
+          <p className="text-xs font-normal mt-4">
+            And then for the main page under the name: 10,000 randomly generated
+            Jawbreakerz ready to find a new home on the Ethereum blockchain.
           </p>
         </div>
       </div>

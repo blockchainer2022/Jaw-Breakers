@@ -27,11 +27,11 @@ const Index = () => {
     <section className="py-16 bg-primary text-dark" id="faq">
       <div className="container">
         <h2 className="font-serif  text-3xl text-center  lg:text-4xl mb-20">
-          Our Jaw Breakers
+          Our Jawbreakerz
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-5">
           {data.map((v, i) => (
-            <div key={i}>
+            <div key={i} className="rounded-lg overflow-hidden">
               <img src={v} alt="" className="w-full" />
             </div>
           ))}
