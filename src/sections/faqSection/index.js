@@ -3,7 +3,7 @@ import { useState } from "react";
 const accordianData = [
   {
     question: "How much to mint a Jawbreakerz?",
-    answer: "Jawbreakerz will be listed at .08 to mint. ",
+    answer: "Jawbreakerz will be listed at 0.03 to mint. ",
   },
   {
     question: "How do I purchase a Jawbreakerz?",

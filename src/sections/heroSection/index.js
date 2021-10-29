@@ -66,7 +66,8 @@ const Index = ({ account, mint, totalSupply, displayPrice, maxSupply }) => {
             Jawbreakerz
           </h1>
           <p className="text-center sm:mx-auto md:mx-0 text-xs mt-6 md:text-left w-full  max-w-lg">
-            Jawbreakerz are randomly generated NFTs that look amazing!
+            10,000 randomly generated Jawbreakerz ready to find a new home on
+            the Ethereum blockchain.!
           </p>
           {difference > 0 ? (
             <Timer

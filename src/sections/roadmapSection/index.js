@@ -1,5 +1,10 @@
 import Image from "../../assets/images/roadmap.png";
+import Image2 from "../../assets/images/roadmap2.png";
+import Image3 from "../../assets/images/roadmap3.png";
+import Image4 from "../../assets/images/roadmap4.png";
 import "./style.css";
+
+// const Images = [Image, Image2, Image3, Image4];
 
 const Index = () => {
   return (
@@ -11,6 +16,7 @@ const Index = () => {
         <h2 className="font-serif text-primary text-3xl  mb-10">Roadmap</h2>
         <div className="w-full">
           <Card
+            img={Image}
             title="PHASE 1"
             text={[
               "10% Minted - Jawbreakerz Airdrop to Holders 5 Jawbreakerz will be airdropped to 5 random holders!",
@@ -21,6 +27,7 @@ const Index = () => {
             ]}
           />
           <Card
+            img={Image2}
             title="PHASE 2
             "
             text={[
@@ -30,6 +37,7 @@ const Index = () => {
             ]}
           />
           <Card
+            img={Image3}
             title="PHASE 3"
             text={[
               "60% Minted - Charity Donation We will donate $10,000 USD to a charity that is chosen by the community!",
@@ -39,6 +47,7 @@ const Index = () => {
             ]}
           />
           <Card
+            img={Image4}
             line={false}
             title="PHASE 4"
             text={[
@@ -54,7 +63,7 @@ const Index = () => {
 
 export default Index;
 
-const Card = ({ title, text, line = true }) => (
+const Card = ({ img, title, text, line = true }) => (
   <div className="w-full flex justify-between items-center card">
     <div
       className={`w-12 h-12 rounded-full bg-primary hidden md:block ${
@@ -66,7 +75,7 @@ const Card = ({ title, text, line = true }) => (
       className="md:w-11/12 w-full p-4 sm:p-8 my-16 sm:pr-0 bg-primary rounded-lg sm:flex sm:flex-row-reverse"
     >
       <div className="w-20 sm:w-40  mx-auto sm:-mt-12 ">
-        <img src={Image} alt="profile" className="sm:w-full" />
+        <img src={img} alt="profile" className="sm:w-full" />
       </div>
       <div className="text-dark sm:text-left sm:flex-1">
         <h6 className="font-serif mt-5 mb-5 sm:tracking-widest sm:mb-3 sm:mt-0 sm:text-2xl ">
