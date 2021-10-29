@@ -7,7 +7,7 @@ import Image6 from "../../assets/images/6.png";
 import Image7 from "../../assets/images/7.png";
 import Image8 from "../../assets/images/8.png";
 import Image9 from "../../assets/images/9.png";
-import Image10 from "../../assets/images/10.png";
+import Image10 from "../../assets/images/10.jpg";
 
 const data = [
   Image1,
@@ -27,7 +27,7 @@ const Index = () => {
     <section className="py-16 bg-primary text-dark" id="faq">
       <div className="container">
         <h2 className="font-serif  text-3xl text-center  lg:text-4xl mb-20">
-          Our Jawbreakerz
+          Gallary
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-5">
           {data.map((v, i) => (
