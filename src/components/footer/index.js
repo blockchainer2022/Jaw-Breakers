@@ -10,11 +10,23 @@ const Index = () => {
       <div className="container flex justify-between items-center flex-wrap flex-col gap-4 sm:flex-row-reverse">
         <div className="flex items-center gap-4">
           <span>
-            <img src={Twitter} alt="twitter" className="w-8" />
+            <a
+              href="https://twitter.com/JawbreakerzNFT"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={Twitter} alt="twitter" className="w-8" />
+            </a>
           </span>
           {/* DISCORD  */}
           <span>
-            <img src={Dribble} alt="dribble" className="w-8" />
+            <a
+              href="https://discord.gg/jBNXF5DmYT"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={Dribble} alt="dribble" className="w-8" />
+            </a>
           </span>
         </div>
         <div className="text-white font-rubik text-xs text-center sm:text-left mt-8  sm:mt-0">

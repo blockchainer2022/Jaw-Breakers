@@ -14,9 +14,15 @@ const Index = () => {
           <h6 className="font-serif text-3xl my-5">JOIN OUR DISCORD GROUP</h6>
           <p className="text-xs"></p>
           <div className="mt-4">
-            <Button className="ml-0" color="primary">
-              Join Discord
-            </Button>
+            <a
+              href="https://discord.gg/jBNXF5DmYT"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="ml-0" color="primary">
+                Join Discord
+              </Button>
+            </a>
           </div>
         </div>
       </div>

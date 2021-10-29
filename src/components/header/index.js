@@ -29,10 +29,22 @@ const Index = ({ account, loadWeb3 }) => {
         <div className="hidden lg:block">
           <div className="text-dark flex lg:block">
             <span className="inline-block p-2">
-              <i className="fab fa-discord"></i>
+              <a
+                href="https://discord.gg/jBNXF5DmYT"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-discord"></i>
+              </a>
             </span>
             <span className="inline-block p-2">
-              <i className="fab fa-twitter"></i>
+              <a
+                href="https://twitter.com/JawbreakerzNFT"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-twitter"></i>
+              </a>
             </span>
           </div>
         </div>
