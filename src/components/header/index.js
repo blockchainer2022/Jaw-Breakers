@@ -7,8 +7,10 @@ const Index = ({ account, loadWeb3 }) => {
   return (
     <header className=" bg-primary text-white shadow-md ">
       <nav className=" container flex items-center justify-between relative py-4">
-        <div className="w-48 flex-1 lg:flex-none">
-          <img src={Logo} alt="logo" />
+        <div className="flex-1 lg:flex-none">
+          <div className="w-48 ">
+            <img src={Logo} alt="logo" className="w-full" />
+          </div>
         </div>
         <div className="hidden lg:block flex-1">
           <ul className="flex list-none  text-dark ml-8 ">
