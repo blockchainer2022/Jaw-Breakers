@@ -26,11 +26,6 @@ const Index = () => {
             therefore extremely proud to present you Jawbreakerz and we hope you
             all love it just as much as we do!
           </p>
-
-          <p className="text-xs font-normal mt-4">
-            And then for the main page under the name: 10,000 randomly generated
-            Jawbreakerz ready to find a new home on the Ethereum blockchain.
-          </p>
         </div>
       </div>
     </section>

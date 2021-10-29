@@ -67,7 +67,7 @@ const Index = ({ account, mint, totalSupply, displayPrice, maxSupply }) => {
           </h1>
           <p className="text-center sm:mx-auto md:mx-0 text-xs mt-6 md:text-left w-full  max-w-lg">
             10,000 randomly generated Jawbreakerz ready to find a new home on
-            the Ethereum blockchain.!
+            the Ethereum blockchain!
           </p>
           {difference > 0 ? (
             <Timer

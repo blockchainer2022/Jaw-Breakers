@@ -18,6 +18,10 @@ const accordianData = [
     question: "How many will there be?",
     answer: "There will be 10,000 Jawbreakerz. ",
   },
+  {
+    question: "When will the jawbreakerz be available to mint",
+    answer: "TBD, join our discord and follow our Twitter for updates.",
+  },
 ];
 
 const Index = () => {
