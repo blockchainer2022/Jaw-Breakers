@@ -24,10 +24,10 @@ const data = [
 
 const Index = () => {
   return (
-    <section className="py-16 bg-primary text-dark" id="faq">
+    <section className="py-16 bg-primary text-dark">
       <div className="container">
         <h2 className="font-serif  text-3xl text-center  lg:text-4xl mb-20">
-          Gallary
+          Gallery
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-5">
           {data.map((v, i) => (

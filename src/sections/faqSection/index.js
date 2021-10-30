@@ -19,7 +19,7 @@ const accordianData = [
     answer: "There will be 10,000 Jawbreakerz. ",
   },
   {
-    question: "When will the jawbreakerz be available to mint",
+    question: "When will the Jawbreakerz be available to mint",
     answer: "TBD, join our discord and follow our Twitter for updates.",
   },
 ];
